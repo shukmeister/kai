@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="kai">
+<head>
+	<title>Kinotek Artificial Intelligence</title>
+
+	<!-- external javascript libraries -->
+	<script src="libraries/jquery-2.1.3.min.js"></script>
+	<script src="libraries/bootstrap.min.js"></script>
+	<script src="libraries/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular-route.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular-resource.js"></script>
+
+	<!-- internal javascript dependencies -->
+	<script src="app.js"></script>
+	<script src="controllers/financial/financialController.js"></script>
+	<script src="controllers/advertising/advertisingController.js"></script>
+	<script src="controllers/home/homeController.js"></script>
+	<script src="controllers/lineup/lineupController.js"></script>
+	<script src="services/kaiService.js"></script>
+
+	<!-- css dependencies -->
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+	<div>
+		kai
+	</div>
+	<div ng-controller="dialogueController">
+
+		<!-- dialogue module -->
+		<div class='module'>
+		hello, {{dialogue}}
+		<div  ng-show='alertsBoolean'>
+			you have new alerts
+		</div>
+	</div>
+	<div ng-controller="homeController">
+
+		<div class="module">
+			<!-- state selection buttons -->
+			<input type="button" ng-click="changeTemplate('home')" value="input members"/>
+			<input type="button" ng-click="changeTemplate('members')" value="view members"/>
+			<input type="button" ng-click="changeTemplate('lineup')" value="view lineup"/>
+		</div>
+		
+		<div ng-include="template.url">
+		</div>
+	</div>
+</div>
+</body>
+</html>

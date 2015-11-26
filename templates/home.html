@@ -1,0 +1,27 @@
+<div class="module" ng-controller="memberController">
+	Add New Members
+	<form novalidate class="simple-form">
+		Name: <input type="text" ng-model="member.name" /><br>
+		E-mail: <input type="text" ng-model="member.email" /><br>
+		Phone: <input type="text" ng-model="member.phone" /><br>
+		Year: 
+		<select ng-model="member.year">
+			<option value="freshman">Freshman</option>
+			<option value="sophomore">Sophomore</option>
+			<option value="junior">Junior</option>
+			<option value="senior">Senior</option>
+		</select> <br>
+		Group:
+		<!-- did i do the group list correctly?  allow selection of multiple -->
+		<select ng-model="member.group">
+			<option ng-repeat="group in groupList" value="{{group}}">{{group}}</option>
+		</select> <br>
+		Major: <input type="text" ng-model="member.major" /><br>
+		<!-- Schedule: <br> -->
+		<input type="button" ng-click="reset()" value="Reset" />
+		<input type="submit" ng-click="update(member)" value="Save" />
+	</form>
+	<pre>form = {{member | json}}</pre>
+	<pre>master = {{master | json}}</pre>
+	<pre>member list = {{memberList | json}}</pre>
+</div>

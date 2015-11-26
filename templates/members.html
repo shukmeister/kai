@@ -1,0 +1,19 @@
+<div class="module" ng-controller="memberController">
+	<div>member list = {{memberList | json}}</div>
+
+
+	<!-- search through members. need to setup filter -->
+	<div>
+		Search: <input type="text" ng-model="search"/><br>
+	</div>
+
+	<!-- display a list of all members.  did i do this right? -->
+	<div ng-repeat="member in memberList">
+		<div> Name: {{member.name}} </div>
+		<div> Email: {{member.email}} </div>
+		<div> Phone: {{member.phone}} </div>
+		<div> Major: {{member.major}} </div>
+		<div> Year: {{member.year}} </div>
+		<div> Group: {{member.group}} </div>
+	</div>
+</div>

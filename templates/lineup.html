@@ -1,0 +1,34 @@
+<div class="module" ng-controller="lineupController">
+	<div>
+		lineup
+	</div>
+
+	<!-- view lineup -->
+	<div ng-repeat="movie in movieList">
+		<div> {{movie.title}} </div> <!-- make this bold -->
+		<div> {{movie.date}} </div>
+		<div> {{movie.time}} </div>
+		<div> {{movie.poster}} </div>
+		<div> Description: {{movie.description}} </div>
+
+		<!-- who is runnning it? -->
+		<div> Staff: {{movie.staff}} </div>
+		<input type="submit" ng-click="editMovie(movie, new)" value="Edit" /> <!-- make a directive that shows edit console using editMovie function -->
+		<input type="submit" ng-click="deleteMovie(movie)" value="Delete" />
+	</div>
+
+	<!-- edit lineup -->
+	Add New Movies
+ 	<form novalidate class="simple-form">
+		Title: <input type="text" ng-model="movie.title" /><br>
+		Description: <input type="text" ng-model="movie.description" /><br>
+		Date: <input type="text" ng-model="movie.date" /><br>
+		Time: <input type="text" ng-model="movie.time" /><br>
+		Theater managers: <input type="text" ng-model="movie.staff" /><br>
+		Poster:
+		<div>
+			<!-- poster upload somehow -->
+		</div>
+		<input type="submit" ng-click="addMovie(movie)" value="Save" />
+	</form>
+</div>
